@@ -1,287 +1,316 @@
-<HTML>
+<!DOCTYPE html>
+<html lang="it">
 <head>
-<meta charset="UTF-8">
-<title>Test</title>
+    <meta charset="UTF-8">
+    <title>Test d'ingresso classe prima - Interpretazione di grafici</title>
+    <style>
+        body {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            background-image: url('quadri.bmp');
+            margin: 20px;
+        }
+        .header-table {
+            width: 96%;
+            border: 0;
+            margin-bottom: 20px;
+        }
+        .header-title {
+            color: #cc3333;
+            font-size: 24px;
+            font-weight: bold;
+            font-style: italic;
+            text-align: center;
+        }
+        .quiz-table {
+            width: 729px;
+            border: 1px solid #000000;
+            border-collapse: collapse;
+        }
+        .quiz-table td {
+            padding: 8px;
+            border: 1px solid #000000;
+        }
+        .question-row {
+            background-color: #00ffff;
+        }
+        .option-row {
+            background-color: #ffffff;
+        }
+        .image-container {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .submit-btn {
+            margin-top: 20px;
+            padding: 8px 15px;
+            font-family: Verdana, sans-serif;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+    <script language="JavaScript">
+        function risultato() {
+            var giuste = 0, errate = 0, voto = 0;
+
+            if (document.quiz.q1[1].checked) { giuste++; } 
+            else { for (var i=0; i<4; i++) { if (document.quiz.q1[i].checked) { errate++; } } }
+
+            if (document.quiz.q2[2].checked) { giuste++; } 
+            else { for (var i=0; i<4; i++) { if (document.quiz.q2[i].checked) { errate++; } } }
+
+            if (document.quiz.q3[0].checked) { giuste++; } 
+            else { for (var i=0; i<4; i++) { if (document.quiz.q3[i].checked) { errate++; } } }
+
+            if (document.quiz.q4[1].checked) { giuste++; } 
+            else { for (var i=0; i<4; i++) { if (document.quiz.q4[i].checked) { errate++; } } }
+
+            if (document.quiz.q5[0].checked) { giuste++; } 
+            else { for (var i=0; i<4; i++) { if (document.quiz.q5[i].checked) { errate++; } } }
+
+            if (document.quiz.q6[1].checked) { giuste++; } 
+            else { for (var i=0; i<4; i++) { if (document.quiz.q6[i].checked) { errate++; } } }
+
+            if (document.quiz.q7[1].checked) { giuste++; } 
+            else { for (var i=0; i<4; i++) { if (document.quiz.q7[i].checked) { errate++; } } }
+
+            if (document.quiz.q8[2].checked) { giuste++; } 
+            else { for (var i=0; i<4; i++) { if (document.quiz.q8[i].checked) { errate++; } } }
+
+            if (document.quiz.q9[1].checked) { giuste++; } 
+            else { for (var i=0; i<4; i++) { if (document.quiz.q9[i].checked) { errate++; } } }
+
+            if (document.quiz.q10[2].checked) { giuste++; } 
+            else { for (var i=0; i<4; i++) { if (document.quiz.q10[i].checked) { errate++; } } }
+
+            voto = giuste - (errate / 4);
+
+            if (giuste < 7) {
+                alert('mediocre. Risposte corrette: ' + giuste + '. Risposte errate: ' + errate + '. Voto: ' + voto);
+            } else if (giuste < 9) {
+                alert('bene. Risposte corrette: ' + giuste + '. Risposte errate: ' + errate + '. Voto: ' + voto);
+            } else {
+                alert('ottimo. Risposte corrette: ' + giuste + '. Risposte errate: ' + errate + '. Voto: ' + voto);
+            }
+        }
+    </script>
 </head>
 <body>
-<SCRIPT language=JavaScript>
-function  risultato()
-{
-  var giuste = 0, errate = 0, voto = 0;
 
-   if (document.quiz.q1[1].checked) {
-	giuste++;
-   } else {for (i=0; i<4; i++) {if (document.quiz.q1[i].checked) {
-	errate++;}}}
-   if (document.quiz.q2[3].checked) {
-	giuste++;
-   } else {for (i=0; i<4; i++) {if (document.quiz.q2[i].checked) {
-	errate++;
-   }}}
-   if (document.quiz.q3[0].checked) {
-	giuste++;
-   } else {for (i=0; i<4; i++) {if (document.quiz.q3[i].checked) {
-	errate++;
-   }}}
-   if (document.quiz.q4[1].checked) {
-	giuste++;
-   } else {for (i=0; i<4; i++) {if (document.quiz.q4[i].checked) {
-	errate++;
-   }}}
-   if (document.quiz.q5[0].checked) {
-	giuste++;
-   } else {for (i=0; i<4; i++) {if (document.quiz.q5[i].checked) {
-	errate++;
-   }}}
-   if (document.quiz.q6[1].checked) {
-	giuste++;
-   } else {for (i=0; i<4; i++) {if (document.quiz.q6[i].checked) {
-	errate++;
-   }}}
-   if (document.quiz.q7[1].checked) {
-	giuste++;
-   } else {for (i=0; i<4; i++) {if (document.quiz.q7[i].checked) {
-	errate++;
-   }}}
-   if (document.quiz.q8[2].checked) {
-	giuste++;
-   } else {for (i=0; i<4; i++) {if (document.quiz.q8[i].checked) {
-	errate++;
-   }}}
-   if (document.quiz.q9[1].checked) {
-	giuste++;
-   } else {for (i=0; i<4; i++) {if (document.quiz.q9[i].checked) {
-	errate++;
-   }}}
-   if (document.quiz.q10[2].checked) {
-	giuste++;
-   } else {for (i=0; i<4; i++) {if (document.quiz.q10[i].checked) {
-	errate++;
-   }}}
-   voto = giuste - (errate / 4);
+    <form name="quiz" onsubmit="risultato(); return false;" method="post">
+        
+        <table class="header-table">
+            <tr>
+                <td width="50%" class="header-title">Test d'ingresso classe prima</td>
+                <td width="50%" class="header-title">interpretazione di grafici</td>
+            </tr>
+        </table>
 
-// VISUALIZZAZIONE RISULTATO
-   if (giuste<7) {
-	alert('mediocre. Risposte corrette: '+giuste+'. Risposte errate: '+errate+'. Voto: '+voto);
-   } else {
-   if (giuste<9) {
-   alert('bene. Risposte corrette: '+giuste+'. Risposte errate: '+errate+'. Voto: '+voto);
-   } else {
-	alert('ottimo. Risposte corrette: '+giuste+'. Risposte errate: '+errate+'. Voto: '+voto);
-   }}
-giuste = 0, errate=0, voto=0;
-}
-</SCRIPT>
-<FORM name=quiz onsubmit=risultato() method=post>
-<TABLE cellSpacing=1 cellPadding=1 width="96%" border=0 vspace="3">
-  <TBODY>
-  <TR>
-    <TD width="50%">
-      <P align=center><B><I><FONT face="Verdana, Arial, Helvetica, sans-serif" 
-      color=#cc3333 size=4>Test d'ingresso classe prima</FONT> </I></B></P></TD>
-    <TD width="50%">
-      <P align=center><B><I><FONT face="Verdana, Arial, Helvetica, sans-serif" 
-      color=#cc3333 size=4>interpretazione di grafici</FONT></I></B> 
-  </P></TD></TR></TBODY></TABLE>
-<TABLE borderColor=#000000 cellSpacing=0 borderColorDark=#000000 cellPadding=1 
-width=729 borderColorLight=#000000 border=1 vspace="9">
-  <TBODY>
-  <TR bgColor=#bf2d24>
-    <TD width=633 height=28></TD></TR><FONT size=+0>
-  <TR bgColor=#ffffff>
-    <TD width=633 bgColor=#00ffff>
-      <P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">1) I punti A(-2,-1), 
-      B(1,-1), C(1,2) sono i vertici di un quadrato. Quali sono le coordinate 
-      del quarto vertice?</P>
-      <P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" align=center><IMG 
-      height=231 src="test_file/test_ing_graf01.jpg" width=300 
-  border=0></P></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q1>D(-2,1)</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q1>D(-2,2)</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q1>D(-1,1)</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q1>D(-1,2)</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633 bgColor=#00ffff>2) Qual è il perimetro del quadrato 
-      precedente? </TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q2>-16</FONT> </TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q2>9</FONT> </TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q2>16</FONT> </TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q2>12</FONT> </TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633 bgColor=#00ffff>
-      <P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" align=left>3) Quali sono le 
-      coordinate del punto di intersezione delle due rette rappresentate in 
-      figura?</P>
-      <P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" align=center><IMG 
-      height=231 src="test_file/test_ing_graf02.jpg" width=300 
-  border=0></P></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q3>A(1,2)</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q3>A(2,1)</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q3>A(1,1)</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q3>A(2,2)&nbsp;&nbsp; </FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633 bgColor=#00ffff height=5>
-      <P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><FONT size=+0>4) Quali 
-      delle rette del disegno precedente passa per il punto 
-  (-2,0)</FONT></P></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633 height=5><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q4>tutte e due</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633 height=5><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q4>r</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633 height=5><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q4>s</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633 height=4><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q4>nessuna</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633 bgColor=#00ffff>
-      <P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">5)Tre amici A, B, C, D 
-      fanno una gara in bicicletta su un percorso di 3km. Nel grafico sono 
-      riportate le rette che rappresentano la distanza percorsa in km per ora di 
-      ciascuno. Chi vince la gara?</P>
-      <P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" align=center><IMG 
-      height=231 src="test_file/test_ing_graf03.jpg" width=300 
-  border=0></P></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q5>A</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q5>B</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q5>C</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q5>D</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633 bgColor=#00ffff>
-      <P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">6) Nel seguente grafico 
-      sono riportati il numero di alunni insufficienti durante l'anno 
-      scolastico. Cosa si può dedurre dal grafico?&nbsp;</P>
-      <P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" align=center><IMG 
-      height=186 src="test_file/test_ing_graf04.jpg" width=300 
-  border=0></P></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton name=q6>Il 
-      mese in cui la classe è andata meglio è stato novembre</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton name=q6>La 
-      classe è andata meglio nel secondo quadrimestre rispetto al 
-  primo</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton name=q6>La 
-      classe è andata meglio nell'ultimo mese di scuola</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q6>Nel mese di ottobre ci sono state più insufficienze che 
-      sufficienze</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633 bgColor=#00ffff>
-      <P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">7) Il seguente grafico 
-      rappresenta l'andamento della temperatura durante il giorno. In quale 
-      fascia oraria è avvenuta la maggiore variazione di temperatura?</P>
-      <P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" align=center><IMG 
-      height=186 src="test_file/test_ing_graf05.jpg" width=300 
-  border=0></P></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q7>Tra le 0 e le 5</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q7>Tra le 5 e le 10</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q7>Tra le 10 e le 15</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q7>Tra le 20 e le 25</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633 bgColor=#00ffff>
-      <P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">8) Per ogni somma incassata 
-      bisogna pagare una tassa. Osservando il grafico, la tassa da pagare è 
-      del</P>
-      <P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" align=center><IMG 
-      height=187 src="test_file/test_ing_graf06.jpg" width=300 
-  border=0></P></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q8>10%</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q8>15%</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q8>20%</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q8>25%</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633 bgColor=#00ffff>
-      <P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">9) Il seguente grafico 
-      rappresenta l'andamento del peso del piccolo Luigi. Quanto pesava Luigi a 
-      7 mesi?</P>
-      <P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" align=center><IMG 
-      height=137 src="test_file/test_ing_graf07.jpg" width=300 
-      border=0></P></FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton name=q9>7 
-      kg</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton name=q9>6 
-      kg</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton name=q9>5 
-      kg</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton name=q9>4 
-      kg</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633 bgColor=#00ffff>
-      <P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">10) Nella seguente carta 
-      stradale quali sono le coordinate di Modena e Bologna?</P>
-      <P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px" align=center><IMG 
-      height=186 src="test_file/test_ing_graf08.jpg" width=300 
-  border=0></P></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q10>M(3,3) B(5,5)</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q10>M(3,1) B(5,1)</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q10>M(3,3) B(5,1)</FONT></TD></TR>
-  <TR bgColor=#ffffff>
-    <TD width=633><FONT size=+0><INPUT type=radio value=radiobutton 
-      name=q10>M(3,3) B(1,5)</FONT></TD></TR></TBODY></TABLE>
-<P align=left><FONT face="Verdana, Arial, Helvetica, sans-serif" size=1><INPUT type=submit value=Controlla name=Submit>
-</FONT></P></FORM>
-	</body></HTML>
+        <table class="quiz-table">
+            
+            <tr class="question-row">
+                <td>
+                    <p>1) I punti A(-2,-1), B(1,-1), C(1,2) sono i vertici di un quadrato. Quali sono le coordinate del quarto vertice?</p>
+                    <div class="image-container">
+                        <img height="231" src="test_file/test_ing_graf01.jpg" width="300" alt="Grafico 1">
+                    </div>
+                </td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q1">D(-2,1)</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q1">D(-2,2)</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q1">D(-1,1)</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q1">D(-1,2)</td>
+            </tr>
+
+            <tr class="question-row">
+                <td>2) Qual è il perimetro del quadrato precedente?</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q2">-16</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q2">9</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q2">16</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q2">12</td>
+            </tr>
+
+            <tr class="question-row">
+                <td>
+                    <p>3) Quali sono le coordinate del punto di intersezione delle due rette rappresentate in figura?</p>
+                    <div class="image-container">
+                        <img height="231" src="test_file/test_ing_graf02.jpg" width="300" alt="Grafico 2">
+                    </div>
+                </td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q3">A(1,2)</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q3">A(2,1)</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q3">A(1,1)</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q3">A(2,2)</td>
+            </tr>
+
+            <tr class="question-row">
+                <td>4) Quali delle rette del disegno precedente passa per il punto (-2,0)?</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q4">tutte e due</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q4">r</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q4">s</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q4">nessuna</td>
+            </tr>
+
+            <tr class="question-row">
+                <td>
+                    <p>5) Tre amici A, B, C, D fanno una gara in bicicletta su un percorso di 3km. Nel grafico sono riportate le rette che rappresentano la distanza percorsa in km per ora di ciascuno. Chi vince la gara?</p>
+                    <div class="image-container">
+                        <img height="231" src="test_file/test_ing_graf03.jpg" width="300" alt="Grafico 3">
+                    </div>
+                </td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q5">A</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q5">B</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q5">C</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q5">D</td>
+            </tr>
+
+            <tr class="question-row">
+                <td>
+                    <p>6) Nel seguente grafico sono riportati il numero di alunni insufficienti durante l'anno scolastico. Cosa si può dedurre dal grafico?</p>
+                    <div class="image-container">
+                        <img height="186" src="test_file/test_ing_graf04.jpg" width="300" alt="Grafico 4">
+                    </div>
+                </td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q6">Il mese in cui la classe è andata meglio è stato novembre</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q6">La classe è andata meglio nel secondo quadrimestre rispetto al primo</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q6">La classe è andata meglio nell'ultimo mese di scuola</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q6">Nel mese di ottobre ci sono state più insufficienze che sufficienze</td>
+            </tr>
+
+            <tr class="question-row">
+                <td>
+                    <p>7) Il seguente grafico rappresenta l'andamento della temperatura durante il giorno. In quale fascia oraria è avvenuta la maggiore variazione di temperatura?</p>
+                    <div class="image-container">
+                        <img height="186" src="test_file/test_ing_graf05.jpg" width="300" alt="Grafico 5">
+                    </div>
+                </td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q7">Tra le 0 e le 5</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q7">Tra le 5 e le 10</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q7">Tra le 10 e le 15</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q7">Tra le 20 e le 25</td>
+            </tr>
+
+            <tr class="question-row">
+                <td>
+                    <p>8) Per ogni somma incassata bisogna pagare una tassa. Osservando il grafico, la tassa da pagare è del</p>
+                    <div class="image-container">
+                        <img height="187" src="test_file/test_ing_graf06.jpg" width="300" alt="Grafico 6">
+                    </div>
+                </td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q8">10%</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q8">15%</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q8">20%</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q8">25%</td>
+            </tr>
+
+            <tr class="question-row">
+                <td>
+                    <p>9) Il seguente grafico rappresenta l'andamento del peso del piccolo Luigi. Quanto pesava Luigi a 7 mesi?</p>
+                    <div class="image-container">
+                        <img height="137" src="test_file/test_ing_graf07.jpg" width="300" alt="Grafico 7">
+                    </div>
+                </td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q9">7 kg</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q9">6 kg</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q9">5 kg</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q9">4 kg</td>
+            </tr>
+
+            <tr class="question-row">
+                <td>
+                    <p>10) Nella seguente carta stradale quali sono le coordinate di Modena e Bologna?</p>
+                    <div class="image-container">
+                        <img height="186" src="test_file/test_ing_graf08.jpg" width="300" alt="Grafico 8">
+                    </div>
+                </td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q10">M(3,3) B(5,5)</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q10">M(3,1) B(5,1)</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q10">M(3,3) B(5,1)</td>
+            </tr>
+            <tr class="option-row">
+                <td><input type="radio" value="radiobutton" name="q10">M(3,3) B(1,5)</td>
+            </tr>
+        </table>
+
+        <p><input type="submit" value="Controlla" name="Submit" class="submit-btn"></p>
+    </form>
+
+</body>
+</html>
